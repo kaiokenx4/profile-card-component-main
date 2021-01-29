@@ -1,0 +1,163 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0"> <!-- displays site properly based on user's device -->
+  <link rel="preconnect" href="https://fonts.gstatic.com">
+  <link href="https://fonts.googleapis.com/css2?family=Kumbh+Sans:wght@400;700&display=swap" rel="stylesheet">
+  <link rel="icon" type="image/png" sizes="32x32" href="./images/favicon-32x32.png">
+  
+  <title>Profile card component</title>
+
+  <style>
+    :root {
+      --dark-cyan: hsl(185, 75%, 39%);
+      --very-dark-desaturated-blue: hsl(229, 23%, 23%);
+      --dark-grayish-blue: hsl(227, 10%, 46%);
+      --dark-gray: hsl(0, 0%, 59%);
+    }
+
+    *,
+    *::before,
+    *::after {
+      margin: 0;
+      padding: 0;
+      box-sizing: inherit;
+    }
+
+    html {
+      box-sizing: border-box;
+      font-size: 112.5%;
+    }
+
+    body {
+      font-family: 'Kumbh Sans', sans-serif;
+    }
+
+    .container {
+      background-color: var(--dark-cyan);
+      min-height: 100vh;
+      position: relative;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      overflow: hidden;
+      padding: 2rem;
+    }
+
+    .pattern-top {
+      position: absolute;
+      right: 50%;
+      bottom: 45%;
+    }
+    .pattern-bottom {
+      position: absolute;
+      top: 50%;
+      left: 50%;
+    }
+
+    .card {
+      width: 20rem;
+      height: 22rem;
+      background-color: #ffffff;
+      z-index: 10;
+      border-radius: 1rem;
+      overflow: hidden;
+      box-shadow: 0rem 2rem 3rem rgba(0,0,0,.25);
+      display: flex;
+      flex-direction: column;
+    }
+
+    /* CARD HEADER PATTERN */
+    .card__pattern {
+      width: 100%;
+    }
+
+    /* PROFILE IMAGE AND INFO */
+    .card__profile {
+      text-align: center;
+      height: 100%;
+    }
+    .card__profile-img {
+      border-radius: 50%;
+      border: .3rem white solid;
+      transform: translate(0, -50%);
+    }
+    .card__profile-name-age {
+      margin-top: -1.5rem;
+      margin-bottom: .6rem;
+    }
+    .name {
+      font-weight: 700;
+      color: var(--very-dark-desaturated-blue);
+      margin-right: .25rem;
+    }
+    .age {
+      color: var(--dark-grayish-blue);
+    }
+    .card__profile-city {
+      text-align: center;
+      color: var(--dark-grayish-blue);
+      font-size: .8rem;
+    }
+
+    /* CARD STATS */
+    .card__stats {
+      display: flex;
+      align-items: center;
+      justify-content: space-around;
+      padding: 1.5rem;
+      border-top: 1px solid lightgray;
+    }
+    .card__stat {
+      text-align: center;
+    }
+    .card__stat-number {
+      font-weight: 700;
+      color: var(--very-dark-desaturated-blue);
+      margin-bottom: .3rem;
+    }
+    .card__stat-label {
+      color: var(--dark-grayish-blue);
+      font-size: .6rem;
+      letter-spacing: 1px;
+    }
+  </style>
+</head>
+<body>
+  <div class="container">
+    <img src="./images/bg-pattern-top.svg" alt="Background Pattern Top" class="pattern-top">
+    <img src="./images/bg-pattern-bottom.svg" alt="Background Pattern Bottom" class="pattern-bottom">
+
+    <div class="card">
+      <img src="./images/bg-pattern-card.svg" alt="Background Pattern of Card" class="card__pattern">
+
+      <div class="card__profile">
+        <img src="./images/image-victor.jpg" alt="Victor" class="card__profile-img">
+        <div class="card__profile-name-age">
+          <span class="name">Victor Crest</span> <span class="age">26</span>
+        </div>
+        <div class="card__profile-city">London</div>
+      </div>
+
+      <div class="card__stats">
+        <div class="card__stat">
+          <div class="card__stat-number">80K</div>
+          <div class="card__stat-label">Followers</div>
+        </div>
+
+        <div class="card__stat">
+          <div class="card__stat-number">803K</div>
+          <div class="card__stat-label">Likes</div>
+        </div>
+        
+        <div class="card__stat">
+          <div class="card__stat-number">1.4K</div>
+          <div class="card__stat-label">Photos</div>
+        </div>
+      </div>
+
+    </div>
+  </div>
+</body>
+</html>
